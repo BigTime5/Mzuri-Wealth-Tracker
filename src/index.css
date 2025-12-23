@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Kenyan Finance Theme - Rich Emerald & Warm Gold */
+    --background: 45 20% 97%;
+    --foreground: 160 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 25% 12%;
+
+    --primary: 158 64% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 40% 94%;
+    --secondary-foreground: 160 25% 20%;
+
+    --muted: 45 20% 92%;
+    --muted-foreground: 160 10% 45%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 160 25% 12%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 64% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 160 25% 12%;
+
+    --border: 45 20% 88%;
+    --input: 45 20% 88%;
+    --ring: 158 64% 32%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --income: 158 64% 40%;
+    --expense: 0 72% 51%;
+    --net-positive: 158 64% 40%;
+    --net-negative: 0 72% 51%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(158 64% 32%), hsl(158 64% 40%));
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 93% 58%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(45 20% 98%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(160 25% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(160 25% 12% / 0.08), 0 2px 4px -2px hsl(160 25% 12% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(160 25% 12% / 0.1), 0 4px 6px -4px hsl(160 25% 12% / 0.1);
+    --shadow-glow: 0 0 20px hsl(158 64% 32% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 160 25% 8%;
+    --foreground: 45 20% 95%;
+
+    --card: 160 20% 12%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 160 20% 12%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 158 64% 45%;
+    --primary-foreground: 160 25% 8%;
+
+    --secondary: 160 15% 18%;
+    --secondary-foreground: 45 20% 90%;
+
+    --muted: 160 15% 20%;
+    --muted-foreground: 45 10% 60%;
+
+    --accent: 38 92% 55%;
+    --accent-foreground: 160 25% 8%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 64% 50%;
+    --success-foreground: 160 25% 8%;
+
+    --border: 160 15% 22%;
+    --input: 160 15% 22%;
+    --ring: 158 64% 45%;
+
+    --income: 158 64% 50%;
+    --expense: 0 72% 55%;
+    --net-positive: 158 64% 50%;
+    --net-negative: 0 72% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-card rounded-xl p-5 shadow-card transition-all duration-300 hover:shadow-card-hover;
+  }
+
+  .currency-display {
+    @apply font-semibold tabular-nums;
+  }
+
+  .income-text {
+    color: hsl(var(--income));
+  }
+
+  .expense-text {
+    color: hsl(var(--expense));
+  }
+
+  .positive-value {
+    color: hsl(var(--net-positive));
+  }
+
+  .negative-value {
+    color: hsl(var(--net-negative));
+  }
+}
