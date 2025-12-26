@@ -1,74 +1,306 @@
-# Welcome to your Lovable project
+# 💰 Mzuri Wealth Tracker
 
-## Project info
+<div align="center">
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![Mzuri Wealth Tracker](public/og-image.png)
 
-## How can I edit this code?
+**A powerful financial management application designed specifically for Kenyans**
 
-There are several ways of editing your application.
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://mzuriwealthtracker.netlify.app/)
+[![GitHub](https://img.shields.io/badge/github-repo-blue?style=for-the-badge&logo=github)](https://github.com/BigTime5/Mzuri-Wealth-Tracker)
+[![Netlify Status](https://img.shields.io/netlify/status?url=https://mzuriwealthtracker.netlify.app/&style=for-the-badge)](https://mzuriwealthtracker.netlify.app/)
 
-**Use Lovable**
+[Live Demo](https://mzuriwealthtracker.netlify.app/) · [Report Bug](https://github.com/BigTime5/Mzuri-Wealth-Tracker/issues) · [Request Feature](https://github.com/BigTime5/Mzuri-Wealth-Tracker/issues)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+</div>
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🌟 Overview
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Mzuri Wealth Tracker is a comprehensive financial management solution built for the Kenyan market. Track your income, manage expenses, visualize your financial health, and build wealth with confidence—all in Kenyan Shillings (KES).
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+**"Mzuri"** means "good" or "beautiful" in Swahili, reflecting our mission to help you build a beautiful financial future.
 
-Follow these steps:
+## ✨ Key Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 📊 **Financial Dashboard**
+- Real-time net worth calculation and display
+- Comprehensive breakdown of income vs. expenses
+- Month-over-month financial trend analysis
+- Visual graphs and charts for better insights
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 💵 **Income Management**
+Track multiple income streams including:
+- Salary and wages
+- Business revenue
+- Investment returns
+- Freelance income
+- Rental income
+- Other sources
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 💳 **Expense Tracking**
+Categorize your spending across:
+- Rent and housing
+- Utilities (electricity, water, internet)
+- Transportation
+- Food and groceries
+- Entertainment
+- Healthcare
+- Education
+- Savings and investments
+- Custom categories
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 📈 **Visual Analytics**
+- Interactive charts showing monthly net worth trends
+- Income vs. expense comparison graphs
+- Category-wise expense breakdown
+- Historical data visualization
+
+### 🔔 **Smart Notifications**
+- Budget threshold alerts
+- Overspending warnings
+- Monthly financial summaries
+- Goal achievement notifications
+
+### 🌐 **Multi-Platform Support**
+- Fully responsive design
+- Optimized for mobile devices
+- Desktop-friendly interface
+- Progressive Web App (PWA) capabilities
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/BigTime5/Mzuri-Wealth-Tracker.git
+   cd Mzuri-Wealth-Tracker
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up environment variables**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+4. **Run database migrations**
+   ```bash
+   # Using Supabase CLI
+   supabase db push
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+6. **Open your browser**
+   
+   Navigate to `http://localhost:5173`
+
+## 🛠️ Built With
+
+### Core Technologies
+- **[React](https://react.dev/)** - UI library for building interactive interfaces
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[Vite](https://vitejs.dev/)** - Next-generation frontend tooling
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+
+### Backend & Database
+- **[Supabase](https://supabase.com/)** - Open-source Firebase alternative
+  - PostgreSQL database
+  - Real-time subscriptions
+  - Authentication
+  - Row-level security
+
+### UI Components & Visualization
+- **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable component library
+- **[Recharts](https://recharts.org/)** - Composable charting library
+- **[Lucide React](https://lucide.dev/)** - Beautiful icon set
+
+### Additional Tools
+- **[React Hook Form](https://react-hook-form.com/)** - Performant form validation
+- **[date-fns](https://date-fns.org/)** - Modern date utility library
+- **[React Router](https://reactrouter.com/)** - Client-side routing
+
+## 📁 Project Structure
+
+```
+Mzuri-Wealth-Tracker/
+├── public/                 # Static assets
+│   ├── android-chrome-*.png
+│   ├── apple-touch-icon.png
+│   ├── manifest.webmanifest
+│   └── og-image.png
+├── src/
+│   ├── components/        # Reusable React components
+│   ├── contexts/          # React Context providers
+│   ├── hooks/             # Custom React hooks
+│   ├── integrations/      # Third-party integrations
+│   │   └── supabase/      # Supabase client & queries
+│   ├── lib/               # Utility functions
+│   ├── pages/             # Page components
+│   ├── types/             # TypeScript type definitions
+│   ├── App.tsx            # Main application component
+│   └── main.tsx           # Application entry point
+├── supabase/
+│   ├── migrations/        # Database migration files
+│   └── config.toml        # Supabase configuration
+└── ...config files
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Features in Detail
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Dashboard
+The main dashboard provides an at-a-glance view of your financial health:
+- Current net worth (Total Income - Total Expenses)
+- Monthly income summary
+- Monthly expense summary
+- Quick action buttons for adding transactions
 
-**Use GitHub Codespaces**
+### Transaction Management
+- Add income and expense entries with ease
+- Edit or delete existing transactions
+- Assign categories for better organization
+- Add notes and descriptions
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Analytics & Reporting
+- Monthly trend charts showing net worth progression
+- Category-wise expense distribution
+- Income source breakdown
+- Exportable reports for tax purposes
 
-## What technologies are used for this project?
+### Budget Control
+- Set monthly budget limits for different categories
+- Receive alerts when approaching or exceeding budgets
+- Track budget utilization percentage
 
-This project is built with:
+## 🔐 Security
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Row-Level Security (RLS)** enabled on all database tables
+- Secure authentication via Supabase Auth
+- Environment variables for sensitive data
+- HTTPS-only in production
 
-## How can I deploy this project?
+## 🌍 Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+The application is deployed on [Netlify](https://www.netlify.com/) with continuous deployment from the main branch.
 
-## Can I connect a custom domain to my Lovable project?
+### Deploy Your Own
 
-Yes, you can!
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/BigTime5/Mzuri-Wealth-Tracker)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Manual Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-# personal-finance-app
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📱 PWA Support
+
+Mzuri Wealth Tracker can be installed as a Progressive Web App on your device:
+
+1. Visit the site on your mobile browser
+2. Tap "Add to Home Screen"
+3. Launch the app like a native application
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the existing code style
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+- Ensure responsive design principles
+
+## 🐛 Bug Reports
+
+Found a bug? Please open an issue on [GitHub Issues](https://github.com/BigTime5/Mzuri-Wealth-Tracker/issues) with:
+- Clear description of the issue
+- Steps to reproduce
+- Expected vs. actual behavior
+- Screenshots (if applicable)
+- Device and browser information
+
+## 📋 Roadmap
+
+- [ ] Multi-currency support
+- [ ] Expense receipt uploads
+- [ ] Recurring transaction automation
+- [ ] Financial goal setting and tracking
+- [ ] Bill payment reminders
+- [ ] Integration with M-Pesa API
+- [ ] AI-powered spending insights
+- [ ] Collaborative family budgets
+- [ ] Export to Excel/PDF
+- [ ] Dark mode support
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**George Phinidy**
+
+- Email: phinidygeorge01@gmail.com
+- GitHub: [@BigTime5](https://github.com/BigTime5)
+- Project Link: [https://github.com/BigTime5/Mzuri-Wealth-Tracker](https://github.com/BigTime5/Mzuri-Wealth-Tracker)
+
+## 🙏 Acknowledgments
+
+- [shadcn](https://twitter.com/shadcn) for the amazing UI components
+- [Supabase](https://supabase.com/) team for the excellent backend platform
+- The open-source community for inspiration and tools
+- Everyone who contributes to making financial literacy accessible in Kenya
+
+## 💬 Support
+
+If you find this project helpful, please give it a ⭐️ on [GitHub](https://github.com/BigTime5/Mzuri-Wealth-Tracker)!
+
+For questions or support, reach out via:
+- Email: phinidygeorge01@gmail.com
+- GitHub Issues: [Create an issue](https://github.com/BigTime5/Mzuri-Wealth-Tracker/issues)
+
+---
+
+<div align="center">
+
+**Made with ❤️ for Kenya**
+
+*Taking control of your finances, one shilling at a time.*
+
+</div>
